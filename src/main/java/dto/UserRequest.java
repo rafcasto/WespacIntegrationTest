@@ -67,7 +67,7 @@ public class UserRequest extends BaseResponse
 
     private String transformUserName(String userName)
     {
-        if(username == null || username.isEmpty()){
+        if(userName == null || userName.isEmpty()){
             return "";
         }
         return username + "_" + getRandomNumber();
