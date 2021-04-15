@@ -51,3 +51,12 @@ Feature: Registration
       | rafcasto | Rafael    |          | R4f43lC1988%% | R4f43lC1988%%   |
     When User process the create profile request
     Then User Get a 400 response
+
+  Scenario: User is unable to create profile with same user name
+    Given User singup with details
+      | username | firstName | lastName | password      | confirmPassword |
+      | rafcasto | Rafael    | Castillo | R4f43lC1988$$ | R4f43lC1988$$   |
+    When User process the create profile request
+    Then User Get a 201 response
+    When User process the create profile request
+    Then User Get a 400 response
