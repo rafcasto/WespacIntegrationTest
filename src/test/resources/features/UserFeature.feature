@@ -16,9 +16,16 @@ Feature: AS a User
     When User process the create profile request
     Then User Get a 400 response
 
-  Scenario: User is unable to create profile on missing password
+  Scenario: User is unable to create profile without password
     Given User singup with details
       | username | firstName | lastName | password | confirmPassword |
       | rafcasto | Rafael    | Castillo |          | R4f43lC1988%%   |
+    When User process the create profile request
+    Then User Get a 400 response
+
+  Scenario: User is unable to create profile without Username
+    Given User singup with details
+      | username | firstName | lastName | password | confirmPassword |
+      |          | Rafael    | Castillo |          | R4f43lC1988%%   |
     When User process the create profile request
     Then User Get a 400 response
