@@ -15,3 +15,10 @@ Feature: AS a User
       | rafcasto | Rafael    | Castillo | R4f43lC1988$$ | R4f43lC1988%%   |
     When User process the create profile request
     Then User Get a 400 response
+
+  Scenario: User is unable to create profile on missing password
+    Given User singup with details
+      | username | firstName | lastName | password | confirmPassword |
+      | rafcasto | Rafael    | Castillo |          | R4f43lC1988%%   |
+    When User process the create profile request
+    Then User Get a 400 response
