@@ -70,6 +70,6 @@ public class UserRequest extends BaseResponse
         if(userName == null || userName.isEmpty()){
             return "";
         }
-        return username + "_" + getRandomNumber();
+        return userName + "_" + getRandomNumber();
     }
 }
