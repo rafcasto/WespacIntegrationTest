@@ -3,7 +3,7 @@ package dto;
 public class BaseResponse
 {
     private int status;
-    private String errorMessage;
+    private String message;
 
     public int getStatus() {
         return status;
@@ -13,12 +13,12 @@ public class BaseResponse
         this.status = status;
     }
 
-    public String getErrorMessage() {
-        return errorMessage;
+    public String getMessage() {
+        return message;
     }
 
-    public void setErrorMessage(String errorMessage) {
-        this.errorMessage = errorMessage;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
 }

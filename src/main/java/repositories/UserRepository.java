@@ -8,5 +8,5 @@ public interface UserRepository
 {
     BaseResponse createUser(UserRequest userRequest);
     BaseResponse getCurrentUser();
-    TokenResponse userLogin();
+    TokenResponse userLogin(UserRequest userRequest);
 }
